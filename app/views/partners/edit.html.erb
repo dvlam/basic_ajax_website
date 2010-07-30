@@ -1,0 +1,24 @@
+<h1>Editing partner</h1>
+
+<% form_for(@partner) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :company %><br />
+    <%= f.text_field :company %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @partner %> |
+<%= link_to 'Back', partners_path %>

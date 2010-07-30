@@ -1,0 +1,982 @@
+
+
+Processing BlogsController#index (for 67.183.51.248 at 2010-07-29 22:24:05) [GET]
+  [4;36;1mBlog Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: blogs: SELECT * FROM "blogs" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: blogs: SELECT * FROM "blogs" ):
+  app/controllers/blogs_controller.rb:5:in `index'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendered rescues/_trace (20.3ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (138.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (42.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBlogs (20100730050348)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "story" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100730050348')[0m
+Migrating to CreateServices (20100730051905)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100730051905')[0m
+Migrating to CreatePartners (20100730051959)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBlogs (20100730050348)
+Migrating to CreateServices (20100730051905)
+Migrating to CreatePartners (20100730051959)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+
+
+Processing CompaniesController#index (for 67.183.51.248 at 2010-07-29 22:25:44) [GET]
+  [4;36;1mCompany Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: companies: SELECT * FROM "companies" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: companies: SELECT * FROM "companies" ):
+  app/controllers/companies_controller.rb:5:in `index'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendered rescues/_trace (20.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (29.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (37.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBlogs (20100730050348)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (75.0ms)[0m   [0mCREATE TABLE "blogs" ("id" serial primary key, "title" character varying(255), "story" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100730050348')[0m
+  [4;35;1mSQL (40.2ms)[0m   [0mCOMMIT[0m
+Migrating to CreateServices (20100730051905)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (77.6ms)[0m   [0mCREATE TABLE "services" ("id" serial primary key, "title" character varying(255), "description" character varying(255), "price" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100730051905')[0m
+  [4;35;1mSQL (39.8ms)[0m   [0mCOMMIT[0m
+Migrating to CreatePartners (20100730051959)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBlogs (20100730050348)
+Migrating to CreateServices (20100730051905)
+Migrating to CreatePartners (20100730051959)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (56.5ms)[0m   [0mCREATE TABLE "partners" ("id" serial primary key, "company" character varying(255), "name" character varying(255), "link" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100730051959')[0m
+  [4;35;1mSQL (38.7ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCompanies (20100730052037)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (48.0ms)[0m   [0mCREATE TABLE "companies" ("id" serial primary key, "about_us" character varying(255), "description" character varying(255), "slogan" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100730052037')[0m
+  [4;35;1mSQL (24.7ms)[0m   [0mCOMMIT[0m
+Migrating to CreateContacts (20100730052056)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (94.8ms)[0m   [0mCREATE TABLE "contacts" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "message" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100730052056')[0m
+  [4;35;1mSQL (26.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing BlogsController#index (for 67.183.51.248 at 2010-07-29 22:28:12) [GET]
+  [4;35;1mBlog Load (1.1ms)[0m   [0mSELECT * FROM "blogs" [0m
+Rendering template within layouts/application
+Rendering blogs/index
+Completed in 22ms (View: 16, DB: 2) | 200 OK [http://67.183.51.248/blogs]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:29:35) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Completed in 16ms (View: 13, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:29:37) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:30:10) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+
+ActionView::TemplateError (Missing template dashboard/_navi.erb in view path app/views) on line #13 of app/views/layouts/application.html.erb:
+10: </head>
+11: <body>
+12: 
+13:              <%= render :partial => 'navi'%>
+14: <p style="color: green"><%= notice %></p>
+15: <div id="main">
+16: <%= yield %>
+
+    app/views/layouts/application.html.erb:13
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendered rescues/_trace (20.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:30:14) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (23.2ms)
+Completed in 40ms (View: 38, DB: 0) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:30:19) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:31:23) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.1ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:31:25) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing BlogsController#index (for 67.183.51.248 at 2010-07-29 22:31:25) [GET]
+  [4;36;1mBlog Load (1.1ms)[0m   [0;1mSELECT * FROM "blogs" [0m
+Rendering template within layouts/application
+Rendering blogs/index
+Rendered layouts/_navi (3.5ms)
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://67.183.51.248/blogs]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:31:30) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing BlogsController#index (for 67.183.51.248 at 2010-07-29 22:31:30) [GET]
+  [4;35;1mBlog Load (1.3ms)[0m   [0mSELECT * FROM "blogs" [0m
+Rendering template within layouts/application
+Rendering blogs/index
+Rendered layouts/_navi (3.2ms)
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://67.183.51.248/blogs]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:31:57) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.0ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://67.183.51.248/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:31:59) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:34:49) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.5ms)
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://67.183.51.248/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:34:50) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:34:51) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:34:59) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.1ms)
+Completed in 7ms (View: 6, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:35:01) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.6ms)
+Completed in 10ms (View: 7, DB: 1) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:35:32) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.4ms)
+Completed in 7ms (View: 6, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:35:33) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template dashboard/service.erb in view path app/views):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:35:34) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.5ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:38:01) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.4ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://67.183.51.248/dashboard/service]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:38:02) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.5ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://67.183.51.248/dashboard/partner]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:38:02) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.4ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://67.183.51.248/dashboard/company]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:38:03) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering template within layouts/application
+Rendering dashboard/contact
+Rendered layouts/_navi (2.9ms)
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://67.183.51.248/dashboard/contact]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:38:04) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/company]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:38:04) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/partner]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:38:05) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/company]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:38:05) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering template within layouts/application
+Rendering dashboard/contact
+Rendered layouts/_navi (3.3ms)
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://67.183.51.248/dashboard/contact]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:38:06) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering template within layouts/application
+Rendering dashboard/contact
+Rendered layouts/_navi (3.0ms)
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://67.183.51.248/dashboard/contact]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:38:38) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.1ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:38:40) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/contact
+Rendered dashboard/_page5 (0.4ms)
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://67.183.51.248/dashboard/contact]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:38:41) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/company]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:38:42) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/partner]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:38:42) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/service]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:38:42) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.1ms)
+Completed in 91ms (View: 9, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:39:04) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.6ms)
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:39:06) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:39:06) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://67.183.51.248/dashboard/service]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:39:07) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/partner]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:39:07) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.1ms)
+Completed in 78ms (View: 77, DB: 1) | 200 OK [http://67.183.51.248/dashboard/company]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:39:08) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/contact
+Rendered dashboard/_page5 (0.1ms)
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://67.183.51.248/dashboard/contact]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:39:09) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.1ms)
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://67.183.51.248/dashboard/service]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:39:10) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.1ms)
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://67.183.51.248/dashboard/partner]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:39:10) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.1ms)
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://67.183.51.248/dashboard/company]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:39:10) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/contact
+Rendered dashboard/_page5 (0.1ms)
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://67.183.51.248/dashboard/contact]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:39:24) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/service]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:39:25) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.1ms)
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://67.183.51.248/dashboard/partner]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:39:25) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.1ms)
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://67.183.51.248/dashboard/company]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:39:25) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/contact
+Rendered dashboard/_page5 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/contact]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:51:39) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (4.6ms)
+Completed in 22ms (View: 20, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 67.183.51.248 at 2010-07-29 22:51:40) [GET]
+
+ActionController::RoutingError (No route matches "/css/blueprint/screen.css" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 67.183.51.248 at 2010-07-29 22:51:40) [GET]
+
+ActionController::RoutingError (No route matches "/css/blueprint/print.css" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:52:11) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.3ms)
+Completed in 11ms (View: 10, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 67.183.51.248 at 2010-07-29 22:52:11) [GET]
+
+ActionController::RoutingError (No route matches "/css/blueprint/screen.css" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 67.183.51.248 at 2010-07-29 22:52:11) [GET]
+
+ActionController::RoutingError (No route matches "/css/blueprint/print.css" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:52:17) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.5ms)
+Completed in 81ms (View: 80, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 67.183.51.248 at 2010-07-29 22:52:17) [GET]
+
+ActionController::RoutingError (No route matches "/css/blueprint/screen.css" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 67.183.51.248 at 2010-07-29 22:52:17) [GET]
+
+ActionController::RoutingError (No route matches "/css/blueprint/print.css" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:52:43) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.2ms)
+Completed in 10ms (View: 9, DB: 1) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:52:47) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.4ms)
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:52:48) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.4ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://67.183.51.248/dashboard/service]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:52:48) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.4ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://67.183.51.248/dashboard/partner]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:53:16) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (2.9ms)
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://67.183.51.248/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:53:31) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.0ms)
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://67.183.51.248/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:53:33) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.1ms)
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:53:34) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/service]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:53:35) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://67.183.51.248/dashboard/partner]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:53:35) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.4ms)
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://67.183.51.248/dashboard/company]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:53:35) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/contact
+Rendered dashboard/_page5 (0.4ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://67.183.51.248/dashboard/contact]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:53:36) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.1ms)
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://67.183.51.248/dashboard/service]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:53:36) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:53:38) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:54:34) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (3.5ms)
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://67.183.51.248/]
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:58:12) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (5.8ms)
+Completed in 25ms (View: 23, DB: 0) | 200 OK [http://67.183.51.248/]
+
+
+Processing DashboardController#index (for 67.183.51.248 at 2010-07-29 22:58:13) [GET]
+Rendering template within layouts/application
+Rendering dashboard/index
+Rendered layouts/_navi (4.1ms)
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://67.183.51.248/]
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:58:15) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.4ms)
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:58:16) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.4ms)
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://67.183.51.248/dashboard/service]
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:58:17) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.5ms)
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://67.183.51.248/dashboard/company]
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:58:17) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.4ms)
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://67.183.51.248/dashboard/partner]
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:58:18) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/company]
+
+
+Processing DashboardController#contact (for 67.183.51.248 at 2010-07-29 22:58:18) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/contact
+Rendered dashboard/_page5 (0.4ms)
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://67.183.51.248/dashboard/contact]
+
+
+Processing DashboardController#blog (for 67.183.51.248 at 2010-07-29 22:58:20) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/blog
+Rendered dashboard/_page1 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/blog]
+
+
+Processing DashboardController#service (for 67.183.51.248 at 2010-07-29 22:58:22) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/service
+Rendered dashboard/_page2 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/service]
+
+
+Processing DashboardController#partner (for 67.183.51.248 at 2010-07-29 22:58:22) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/partner
+Rendered dashboard/_page3 (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://67.183.51.248/dashboard/partner]
+
+
+Processing DashboardController#company (for 67.183.51.248 at 2010-07-29 22:58:22) [POST]
+  Parameters: {"authenticity_token"=>"MxufSXYK0dHvam7KDCVWlidnetQjqH/+lHwxk9DPsl0=", "_"=>""}
+Rendering dashboard/company
+Rendered dashboard/_page4 (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://67.183.51.248/dashboard/company]
+
+
+Processing BlogsController#index (for 67.183.51.248 at 2010-07-29 22:58:43) [GET]
+  [4;36;1mBlog Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: blogs: SELECT * FROM "blogs" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: blogs: SELECT * FROM "blogs" ):
+  app/controllers/blogs_controller.rb:5:in `index'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162
+
+Rendered rescues/_trace (20.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
